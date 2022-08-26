@@ -1,5 +1,4 @@
-import {fireEvent, render, screen, act} from '@testing-library/react';
-import {getRoutes, getDirections, getStops} from './api';
+import { getRoutes, getDirections, getStops } from './api';
 
 describe('test api calls', () => {
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { Menu } from 'react-burger-menu';
 
 import './NavBar.css'
 

@@ -1,6 +1,5 @@
-import {fireEvent, render, screen, act} from '@testing-library/react';
-import { userEvent } from '@testing-library/user-event';
-import { findRenderedComponentWithType } from 'react-dom/test-utils';
+import { fireEvent, render, screen } from '@testing-library/react';
+
 import RouteSelector from './RouteSelector';
 
 describe('Route Selector Component', () => {
@@ -32,13 +31,11 @@ describe('select fires on change correctly', () => {
 
   it('calls onchange for select correctly', () => {
     const onChangeMock = jest.fn();
-    const eventMock = {
-      preventDefault() {},
-      target: {value: 'route 2'}
-    }
     const select = screen.getByRole('combobox');
     select.onchange = onChangeMock;
     fireEvent.change(select);
     expect(onChangeMock).toHaveBeenCalledTimes(1);
   })
+
+  //I would want to add some more tests here to ensure the select is working
 })

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { getStops } from '../api';
 
@@ -11,6 +11,10 @@ function Stops(props) {
     getStops(routeId, directionId)
     .then((data) => {
       setStops(data);
+    })
+    .catch((error) => {
+      //would also want to actually display error/something useful for user
+      console.log(error);
     });
   }
 

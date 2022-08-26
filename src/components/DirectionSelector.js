@@ -16,6 +16,7 @@ function DirectionSelector(props) {
       setDirections(data);
     })
     .catch((error) => {
+      //would want to handle this differently instead of just logging
       console.log('error: ', error);
     })
   }
@@ -43,7 +44,6 @@ function DirectionSelector(props) {
       </select>
       {props.routeId && directionId ? <Stops routeId={props.routeId} directionId={directionId}/> : null}
     </div>
-    
   )
 }
 

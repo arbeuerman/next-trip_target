@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 import DirectionSelector from './DirectionSelector';
 import { getRoutes } from '../api';
@@ -16,6 +16,7 @@ function RouteSelector() {
       setRoutes(data);
     })
     .catch((error) => {
+      //would want to handle differently/display something here
       console.log('error: ', error);
     })
   }

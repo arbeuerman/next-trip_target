@@ -1,4 +1,5 @@
-import {fireEvent, render, screen} from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+
 import DirectionSelector from './DirectionSelector';
 
 describe('Direction Selector Component', () => {
@@ -24,14 +25,9 @@ describe('select fires on change correctly', () => {
 
   it('calls onchange for select correctly', () => {
     const onChangeMock = jest.fn();
-    const eventMock = {
-      preventDefault() {},
-      target: {value: ''}
-    }
     const select = screen.getByRole('combobox');
     select.onchange = onChangeMock;
-    fireEvent.change(select, {target: {value: 'north'}});
+    fireEvent.change(select);
     expect(onChangeMock).toHaveBeenCalledTimes(1);
-    // expect(onChangeMock).toHaveBeenCalledWith('north');
   })
 })
