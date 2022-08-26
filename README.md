@@ -14,9 +14,10 @@ The following routes were used from the API:
 
 ### To run the app
 
-1. Navigate to folder _next-trip_target_
-2. Run `npm ci` in terminal to ensure npm packages up-to-date
-3. Enter command `npm start` in terminal to spin up localhost
+1. Clone the repository
+2. Navigate to folder _next-trip_target_
+3. Run `npm ci` in terminal to ensure npm packages up-to-date
+4. Enter command `npm start` in terminal to spin up localhost
 
 ## To execute tests
 
