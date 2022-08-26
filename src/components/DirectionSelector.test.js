@@ -16,3 +16,22 @@ describe('Direction Selector Component', () => {
   });
 
 })
+
+describe('select fires on change correctly', () => {
+  beforeEach(() => {
+    render(<DirectionSelector/>);
+  });
+
+  it('calls onchange for select correctly', () => {
+    const onChangeMock = jest.fn();
+    const eventMock = {
+      preventDefault() {},
+      target: {value: ''}
+    }
+    const select = screen.getByRole('combobox');
+    select.onchange = onChangeMock;
+    fireEvent.change(select, {target: {value: 'north'}});
+    expect(onChangeMock).toHaveBeenCalledTimes(1);
+    // expect(onChangeMock).toHaveBeenCalledWith('north');
+  })
+})
