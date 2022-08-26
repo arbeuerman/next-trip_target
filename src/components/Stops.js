@@ -24,7 +24,7 @@ function Stops(props) {
     <table style={{paddingLeft: 440, textAlign: 'left', paddingTop: 10}}>
       <thead>
         <tr>
-          <th>Stop</th>
+          <th>Stops along route</th>
         </tr>
       </thead>
       <tbody>

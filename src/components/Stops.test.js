@@ -10,7 +10,7 @@ describe('Stops Component', () => {
   it('renders table correctly', () => {
     render(<Stops/>);
     const table = screen.getByRole('table');
-    expect(table).toHaveTextContent('Stop');
+    expect(table).toHaveTextContent('Stops along route');
   })
 
 })
