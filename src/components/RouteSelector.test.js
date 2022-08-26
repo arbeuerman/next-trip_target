@@ -23,20 +23,14 @@ describe('Route Selector Component', () => {
   });
 });
 
-describe('API call for routes functions correctly', () => {
-  beforeEach(() => {
-    fetchMock.resetMocks();
-    // render(<RouteSelector/>);
-  });
+// describe('user interactions', () => {
+//   beforeEach(() => {
+//     render(<RouteSelector/>);
+//   });
 
-  it('calls the api once', () => {
-    fetch.mockResponseOnce(JSON.stringify({ response : [
-      { agency_id:0, route_id:"901", route_label:"METRO Blue Line" },
-      { agency_id:0, route_id:"991", route_label:"Blue Line Bus" },
-    ]}));
-    act(() => { 
-      render(<RouteSelector />);
-    });
-    expect(fetch).toHaveBeenCalledTimes(1);
-  })
-})
+//   it('sets select correctly', () => {
+//     const select = screen.getByRole('combobox');
+//     const loadRoutes = jest.fn();
+//     expect(loadRoutes).toHaveBeenCalledTimes(1);
+//   })
+// })

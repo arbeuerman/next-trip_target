@@ -7,4 +7,10 @@ describe('Stops Component', () => {
     expect(() => { render(<Stops/>)}).not.toThrowError();
   });
 
+  it('renders table correctly', () => {
+    render(<Stops/>);
+    const table = screen.getByRole('table');
+    expect(table).toHaveTextContent('Stop');
+  })
+
 })

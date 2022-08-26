@@ -7,4 +7,12 @@ describe('Direction Selector Component', () => {
     expect(() => { render(<DirectionSelector/>)}).not.toThrowError();
   });
 
+  it('renders select correctly', () => {
+    render(<DirectionSelector />);
+    const select = screen.getByRole('combobox'); //https://www.w3.org/TR/html-aria/#docconformance
+    expect(select).toBeInTheDocument();
+    //check that the first option is correct
+    expect(select.options[0]).toHaveTextContent('Select a direction')
+  });
+
 })
