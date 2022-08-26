@@ -28,7 +28,7 @@ function DirectionSelector(props) {
   useEffect(loadDirections, [routeId]);
 
   return(
-    <>
+    <div style={{paddingTop: 10, paddingBottom: 20}}>
       <select onChange={handleDirectionChange}>
         <option value={''} >
             Select a direction
@@ -42,7 +42,7 @@ function DirectionSelector(props) {
         }
       </select>
       {props.routeId && directionId ? <Stops routeId={props.routeId} directionId={directionId}/> : null}
-    </>
+    </div>
     
   )
 }

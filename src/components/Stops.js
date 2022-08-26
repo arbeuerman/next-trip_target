@@ -17,13 +17,22 @@ function Stops(props) {
   useEffect(loadStops, [routeId, directionId]);
 
   return(
-    <ul>
-      {stops.map(stop => 
-        {
-          return <li key={stop.place_code}>{stop.description}</li>
-        })
-      }
-    </ul>
+    <table style={{paddingLeft: 440, textAlign: 'left', paddingTop: 10}}>
+      <thead>
+        <tr>
+          <th>Stop</th>
+        </tr>
+      </thead>
+      <tbody>
+        {stops.map(stop => 
+          {
+            return <tr key={stop.place_code}>
+                      <td>{stop.description}</td>
+                    </tr>
+          })
+        }
+      </tbody>
+    </table>
   )
 }
 

@@ -6,9 +6,9 @@
 
 The following routes were used from the API:
 
-- **to load routes:** GET '/nextripv2/routes'
-- **to load directions:** GET '/nextripv2/directions/{route_id}
-- **to load stops:** GET '/nextripv2/stops/{route_id}/{direction_id}
+- **to load routes:** `GET '/nextripv2/routes'`
+- **to load directions:** `GET '/nextripv2/directions/{route_id}`
+- **to load stops:** `GET '/nextripv2/stops/{route_id}/{direction_id}`
 
 ## Building and running app
 
