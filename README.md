@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Next Trip Case Study
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+> This case study attempts to emulate some portions of the NexTrip API, used in Minneapolis for their bus and train routes. The documentation and examples for using the API can be found [here](https://svc.metrotransit.org/swagger/index.html).
 
-In the project directory, you can run:
+The following routes were used from the API:
 
-### `npm start`
+- **to load routes:** GET '/nextripv2/routes'
+- **to load directions:** GET '/nextripv2/directions/{route_id}
+- **to load stops:** GET '/nextripv2/stops/{route_id}/{direction_id}
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Building and running app
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### To run the app
 
-### `npm test`
+1. Navigate to folder _next-trip_target_
+2. Run `npm ci` in terminal to ensure packages up-to-date
+3. Enter command `npm start` in terminal to spin up localhost
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## To execute tests
 
-### `npm run build`
+1. Open a new terminal window
+2. Run `npm test` to run tests
+3. Might have to enter `a` to run all tests
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Assumptions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- User would want stops displayed when route is changed (they are not cleared right now when route changes, but they are updated).
+- API calls might be made in more than one file, so put all calls into one api file for ease of use.
+- Each file responsible for own needed inputs i.e. route_id, direction_id, instead of having a parent file that managed those parameters, passed route_id down as props twice. Might want to consider having a parent component hold that as state if there were multiple children that needed it.
+- Axios not needed for now, instead just using the built-in fetch for calling the API. If calls got more complex or if we wanted to not mock the global fetch function for testing, we might want to switch to using axios.
+- Nesting of components is: App --> RouteSelector --> DirectionSelector --> Stops but if we wanted to display stops via another path (for example, on the [nexTrip site](https://www.metrotransit.org/nextrip/) you can also search by stop number) we might want to nest in a different way.
